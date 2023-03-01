@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+	{% for element in result %}
+		<a href="{{ url_for(element.url) }}">{{ element.name }}</a>
+	{% endfor %}
+{% endblock %}

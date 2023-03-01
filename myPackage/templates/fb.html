@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+{% block content %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='zhome.css') }}">
+</head>
+
+<body>
+	<div class=" header1">
+		<div id="name" class="header1">
+			
+		</div>
+		<div id="searcharea" class="header1">
+			<input placeholder="search here...."
+				type="text" id="searchbox" />
+		</div>
+		<div id="profilearea" class="header1"><a href=""> Profile</a></div>
+		<div id="profilearea1" class="header1">|</div>
+		<div id="profilearea2" class="header1"><a href=""> Home</a></div>
+	</div>
+	<div class="sidenav">
+		<div class="bodyn">
+		<a href=""><div id="side1" class="bodyn">Profile</div></a>
+		<a href=""><div id="side2" class="bodyn">edit profile</div>
+        <a href=""><div id="side3" class="bodyn">News feed</div>
+        <a href=""><div id="side4" class="bodyn">Messages</div>
+        <a href=""><div id="side5" class="bodyn">Events</div>
+        <a href=""><div id="side6" class="bodyn">PAGES</div>
+        <a href=""><div id="side7" class="bodyn">Pages feed</div>
+        <a href=""><div id="side8" class="bodyn">Like pages</div>
+        <a href=""><div id="side9" class="bodyn">Create page</div>
+        <a href=""><div id="side10" class="bodyn">Create ad</div>
+        <a href=""><div id="side11" class="bodyn">GROUPS</div>
+        <a href=""><div id="side14" class="bodyn">APPS</div>
+        <a href=""><div id="side15" class="bodyn">Games</div>	
+
+		</div>
+	</div>
+	
+	<!-- <div class="post">
+		<div id="column-1" class="post">
+			update status | add photos/
+			videos | create photo album
+			<hr><br><br><br><br><br><br>
+			<hr>
+		</div>
+		<div id="postpos" class="post">
+			<input type="submit" id="buttonpost" value="post" />
+		</div>
+		<div id="postboxpos" class="post">
+			<textarea placeholder="What's in your mind"
+				id="postbox">
+			</textarea>
+		</div>
+	</div> -->
+
+	{% for record in query %}
+	<h3> post is {{record.Post.id}} </h3>
+	<div class="post1">
+		<h3> post is {{record.Post.id}} </h3>
+		<img src="nat.jpg" alt="image is here"
+			height="400" width="575" /><br><br>
+		<p6>Like Comment Share</p6><br>
+		<hr>
+		<p1>Ali </p1>
+		<p2> and</p2>
+		<p1> 5 others</p1>
+		<p2> like this</p2>
+		<div id="post2text" class="post1">
+			<p3>{{record.User.email}}</p3>
+
+		</div>
+		<div id="commentprof2" class="post1">
+			<p1>{{record.Post.title}} </p1>
+		</div>
+		<div id="commentboxpos2" class="post1">
+			<input type="text" placeholder="comment"
+				id="commentbox" />
+		</div>
+	</div>
+	{% endfor %}
+	<div class="sidebox">
+		<div id="sidebox1" class="sidebox">
+			<div id="sideboxx1">YOUR PAGES</div>
+			<hr><br><br>See all
+			<hr>
+			<div id="sideboxx2">
+				This Week
+			</div><br><br>See more
+			<hr>
+			<div id="sideboxx3">
+				Recent Posts
+			</div><br><br>See more
+			<hr>
+			<div id="sideboxx4">
+				You haven't posted in this days
+			</div><br><br><br>See all
+		</div>
+
+		<div id="post1pos" class="sidebox">
+			<input type="submit" id="buttonpost1"
+				value="write a post" />
+		</div>
+	</div>
+	<div class="sideboxxx2">
+		<div id="sidebox2" class="sideboxxx2">
+			<hr>
+			<div id="sideboxx21">Trending</div>
+			<br><br><br>See more
+			<hr>
+			<div id="sideboxx22">
+				Suggested Pages
+			</div><br><br><br>See all
+			<hr>
+			<div id="sideboxx23">
+				People you may know
+			</div><br><br><br><br>See all
+		</div>
+	</div>
+</body>
+
+</html>
+{% endblock %}
